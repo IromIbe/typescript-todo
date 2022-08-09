@@ -2,13 +2,20 @@ import type { NextPage } from 'next'
 import React, { useState } from 'react'
 import Head from 'next/head'
 
+type Todo = {
+task:string;
+ completed:boolean
+}
+
 const Home: NextPage = () => {
 
-const [inputValue, setInputValue] = useState<string>("")
+const [inputValue, setInputValue] = useState("")
 
+const addNum = (num1: number , num2: number):number =>{
+  return (num1 + num2)
+}
 
-
-const [todos, setTodos] = useState<{task:string, completed:boolean}[]>([])
+const [todos, setTodos] = useState<Todo[]>([])
 
 
 const handleChange = (e: React.ChangeEvent<HTMLInputElement>):void=>{
